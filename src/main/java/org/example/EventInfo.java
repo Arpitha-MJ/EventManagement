@@ -11,7 +11,7 @@ class EventInfo implements IEventInfo {
     private final LocalDate eventDate;
     private final int capacity;
 
-    private boolean cancelled;
+    private final boolean cancelled;
 
     // Lists preserve insertion order and are exposed via getRegistration() / getAttendees().
     private final List<IPerson> registration;
@@ -69,10 +69,6 @@ class EventInfo implements IEventInfo {
     @Override
     public boolean isCancelled() {
         return cancelled;
-    }
-
-    public void setCancelled(boolean cancelled) {
-        this.cancelled = cancelled;
     }
 
     // Return unmodifiable view so callers cannot mutate the internal list.
